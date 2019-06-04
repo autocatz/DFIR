@@ -44,7 +44,7 @@ Set-AzureADUser -ObjectID  $TargetUser -AccountEnabled $false
 Get-AzureADUser -Filter "userPrincipalName eq $TargetUser" |Revoke-AzureADUserAllRefreshToken
 
 #Resets Password
-Set-AzureADUserPassword -ObjectId $TargetUser -Password 
+Set-AzureADUserPassword -ObjectId $TargetUser -Password $TargetPassword
 
 #reenables the account
 Set-AzureADUser -ObjectID $TargetUser -AccountEnabled $true
